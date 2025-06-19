@@ -17,6 +17,7 @@
       background: #320f31;
       overflow-x: hidden;
     }
+
     nav {
       background: #1c082a;
       color: #fff;
@@ -28,22 +29,32 @@
       justify-content: space-between;
       align-items: center;
     }
+
     nav h1 {
       font-size: 1.5rem;
       font-family: 'Poppins', sans-serif;
     }
+
     nav ul {
       list-style: none;
       display: flex;
       gap: 1rem;
     }
+
     nav ul li a {
       text-decoration: none;
       color: #f8f9fa;
       font-weight: bold;
       transition: color 0.3s;
     }
-    nav ul li a:hover { color: #e573f7; }
+
+    nav ul li a:hover {
+      color: #e573f7;
+    }
+
+    nav button {
+      display: none;
+    }
 
     header, section {
       position: relative;
@@ -51,7 +62,11 @@
       background: #320f31;
       overflow: hidden;
     }
-    section:nth-of-type(even) { background: #26103e; }
+
+    section:nth-of-type(even) {
+      background: #26103e;
+    }
+
     section .container {
       max-width: 1000px;
       margin: auto;
@@ -65,8 +80,17 @@
       background: rgba(255, 255, 255, 0.05);
       animation: float 12s infinite ease-in-out;
     }
-    .bubble { width: 100px; height: 100px; top: 20%; left: 10%; }
-    .star { width: 4px; height: 4px; background: #fff; top: 10%; left: 80%; animation: twinkle 3s infinite ease-in-out; }
+
+    .bubble {
+      width: 100px; height: 100px;
+      top: 20%; left: 10%;
+    }
+
+    .star {
+      width: 4px; height: 4px; background: #fff;
+      top: 10%; left: 80%;
+      animation: twinkle 3s infinite ease-in-out;
+    }
 
     @keyframes float {
       0% { transform: translateY(0); }
@@ -155,7 +179,10 @@
       color: #e0d5e8;
     }
 
-    ul { list-style-type: none; padding: 0; }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
 
     .skills li, .contact-links li {
       background: rgba(255, 255, 255, 0.08);
@@ -165,8 +192,14 @@
       border-radius: 0.5rem;
     }
 
-    a { color: #f06292; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    a {
+      color: #f06292;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
 
     .download-btn {
       display: inline-block;
@@ -199,8 +232,50 @@
     }
 
     @media (max-width: 768px) {
-      .hero-container { flex-direction: column-reverse; text-align: center; }
-      .hero-left { padding-left: 0; }
+      .hero-container {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 2rem 1rem;
+      }
+
+      .hero-left {
+        padding-left: 0;
+      }
+
+      .hero-left h1 {
+        font-size: 2.2rem;
+      }
+
+      .typing {
+        font-size: 1rem;
+        border-right: 2px solid #ffeaa7;
+      }
+
+      .hero-img {
+        width: 180px;
+        height: 180px;
+      }
+
+      section {
+        padding: 3rem 1rem;
+      }
+
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      p, li {
+        font-size: 1rem;
+      }
+
+      nav button {
+        display: block;
+        background: none;
+        border: none;
+        color: #e573f7;
+        font-size: 1.5rem;
+      }
+
       nav ul {
         flex-direction: column;
         background: #1c082a;
@@ -210,12 +285,9 @@
         right: 0;
         display: none;
       }
-      nav ul.show { display: flex; }
-      nav button {
-        background: none;
-        border: none;
-        color: #e573f7;
-        font-size: 1.5rem;
+
+      nav ul.show {
+        display: flex;
       }
     }
   </style>
@@ -241,7 +313,7 @@
     <div class="hero-container">
       <div class="hero-left">
         <h1>Rajib Kumar Jena</h1>
-        <div class="typing">Web Developer | Python Developer | Java Developer </div>
+        <div class="typing">Web Developer | Python Developer | Java Developer</div>
         <a class="download-btn" href="CV%20Rajib%20Kumar%20Jena%206.pdf" download>Download Resume</a>
       </div>
       <div class="hero-right">
