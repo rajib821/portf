@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rajib Kumar Jena | Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: #f1f1f1;
+      background: #320f31;
+      overflow-x: hidden;
+    }
+    nav {
+      background: #1c082a;
+      color: #fff;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav h1 {
+      font-size: 1.5rem;
+      font-family: 'Poppins', sans-serif;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #f8f9fa;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover { color: #e573f7; }
+
+    header, section {
+      position: relative;
+      padding: 5rem 2rem;
+      background: #320f31;
+      overflow: hidden;
+    }
+    section:nth-of-type(even) { background: #26103e; }
+    section .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 0 2rem;
+      animation: fadeInUp 1s ease both;
+    }
+
+    .bubble, .star {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      animation: float 12s infinite ease-in-out;
+    }
+    .bubble { width: 100px; height: 100px; top: 20%; left: 10%; }
+    .star { width: 4px; height: 4px; background: #fff; top: 10%; left: 80%; animation: twinkle 3s infinite ease-in-out; }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-30px); }
+      100% { transform: translateY(0); }
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+
+    .hero-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 2rem;
+      animation: fadeInUp 1s ease both;
+    }
+
+    .hero-left {
+      flex: 1;
+      text-align: left;
+      padding-left: 2rem;
+    }
+
+    .hero-left h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-family: 'Poppins', sans-serif;
+      letter-spacing: 1px;
+    }
+
+    .typing {
+      font-size: 1.4rem;
+      color: #ffeaa7;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid #ffeaa7;
+      animation: typing 3s steps(30, end) infinite alternate;
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    .hero-right {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-img {
+      border-radius: 50%;
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #e573f7;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    h3 {
+      margin-top: 1.5rem;
+      font-size: 1.4rem;
+      color: #ffc0ff;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    p, li {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #e0d5e8;
+    }
+
+    ul { list-style-type: none; padding: 0; }
+
+    .skills li, .contact-links li {
+      background: rgba(255, 255, 255, 0.08);
+      display: inline-block;
+      margin: 0.3rem;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+    }
+
+    a { color: #f06292; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .download-btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background: #e573f7;
+      color: #fff;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .download-btn:hover {
+      background: #d14de5;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #1c082a;
+      color: #fff;
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .hero-container { flex-direction: column-reverse; text-align: center; }
+      .hero-left { padding-left: 0; }
+      nav ul {
+        flex-direction: column;
+        background: #1c082a;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        display: none;
+      }
+      nav ul.show { display: flex; }
+      nav button {
+        background: none;
+        border: none;
+        color: #e573f7;
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h1>Developer</h1>
+    <ul id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button id="menu-toggle">☰</button>
+  </nav>
+
+  <header>
+    <div class="bubble"></div>
+    <div class="star"></div>
+    <div class="hero-container">
+      <div class="hero-left">
+        <h1>Rajib Kumar Jena</h1>
+        <div class="typing">Web Developer | Python Developer | Java Developer </div>
+        <a class="download-btn" href="CV%20Rajib%20Kumar%20Jena%206.pdf" download>Download Resume</a>
+      </div>
+      <div class="hero-right">
+        <img src="RAJIB KUMAR JENA PHOTO.jpg" alt="Rajib Kumar Jena" class="hero-img" />
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>Enthusiastic and detail-oriented Frontend Developer with hands-on experience at SpringPeople Software Pvt. Ltd., where I contributed to building and maintaining a fully functional web platform. Proficient in HTML, CSS, JavaScript, and responsive web design, with working knowledge of frontend frameworks like React. Skilled in Git, OOP, data structures, debugging, and collaboration.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <h2>Skills</h2>
+      <ul class="skills">
+        <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Figma</li><li>Java</li><li>Python</li>
+        <li>React</li><li>Git</li><li>WordPress</li><li>Botpress</li>
+        <li>SQL</li><li>Linux</li><li>Debugging</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <h2>Experience</h2>
+      <h3><strong>SpringPeople Software Pvt. Ltd.</strong> (Jan 2025 - Present)</h3>
+      <ul>
+        <li>Designed and developed a fully functional website.</li>
+        <li>Implemented front-end and back-end features for seamless UX.</li>
+        <li>Focused on performance optimization and security.</li>
+        <li>Integrated database and managed dynamic content.</li>
+        <li>Deployed and maintained the website ensuring reliability.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <h3>Chatbot Development</h3>
+      <ul>
+        <li>Built using HTML, CSS, JavaScript, and Botpress.</li>
+        <li>Responsive, user-friendly UI integrated into existing platform.</li>
+      </ul>
+      <h3>K-means Clustering</h3>
+      <ul>
+        <li>Implemented clustering for data segmentation.</li>
+        <li>Optimized K values using Python libraries.</li>
+        <li>Used for pattern recognition and insights extraction.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="container">
+      <h2>Education</h2>
+      <ul>
+        <li><strong>MCA</strong> - GEC Autonomous College, Bhubaneswar (2023 - 2025)</li>
+        <li><strong>BSc</strong> - F.M University, Balasore (2019 - 2022)</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <ul class="contact-links">
+        <li>Email: <a href="mailto:rajibkumarj44@gmail.com">rajibkumarj44@gmail.com</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/rajib-kumar-jena">linkedin.com/in/rajib-kumar-jena</a></li>
+        <li>Phone: 7205329504</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Rajib Kumar Jena. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
+
+</body>
+</html>
